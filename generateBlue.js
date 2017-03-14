@@ -48,14 +48,9 @@ console.log(questions.length)
 
 shuffleArray(questions);
 var fs = require('fs');
-for(var i = 0; i < 5; i++){
-	var aux = [];
-	extra = i * 10;
-	for(var j = 0; j < 10; j++){
-		aux.push(questions[extra+j])
-	}
-	var json = JSON.stringify(aux);
-	var name = 'blue' + i + '.json'
+for(var i = 0; i < 50; i++){
+	var json = JSON.stringify(questions[i]);
+	var name = 'history' + i + '.json'
 	fs.writeFile(name, json, 'utf8');
 }
 
